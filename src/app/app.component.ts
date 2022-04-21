@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'design-patterns';
+
+  constructor(private http: HttpClient,
+    private store: Store<{ count: number }>) {
+  }
+
+  ngOnInit(): void {}
 }

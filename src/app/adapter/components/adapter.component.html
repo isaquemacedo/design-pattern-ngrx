@@ -1,0 +1,8 @@
+<mat-nav-list *ngIf="adapt$ | async as adapt">
+  <mat-list-item *ngFor="let a of adapt">
+    <div mat-line>{{a.model}}</div>
+    <div mat-line>{{a.manufacturer}}</div>
+    <div mat-line>{{a.year}}</div>
+    <div mat-line>{{a.value}}</div>
+  </mat-list-item>
+</mat-nav-list>

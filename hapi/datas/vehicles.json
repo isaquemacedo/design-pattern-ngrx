@@ -1,0 +1,41 @@
+[
+  {
+    "year": 2020,
+    "manufactureYear": 2019,
+    "model": "LEAF",
+    "manufacturer": "NISSAN",
+    "type": "Hatchback",
+    "fuel": ["Gasolina", "alcool"],
+    "uf": "SP",
+    "value": 205.790,
+    "fipValue": 200000,
+    "km": 0,
+    "color": "branco"
+  },
+  {
+    "year": 2019,
+    "manufactureYear": 2018,
+    "model": "F-PACE",
+    "manufacturer": "JAGUAR",
+    "type": "Utilitário esportivo",
+    "fuel": ["Gasolina"],
+    "uf": "PR",
+    "value": 205.790,
+    "fipValue": 200000,
+    "km": 0,
+    "color": "branco"
+  },
+  {
+    "year": 2020,
+    "manufactureYear": 2020,
+    "model": "SQ5",
+    "manufacturer": "AUDI",
+    "type": "Utilitário esportivo",
+    "fuel": ["Gasolina"],
+    "uf": "SP",
+    "value": 458.900,
+    "fipValue": 450000,
+    "km": 0,
+    "color": "preto"
+  }
+]
