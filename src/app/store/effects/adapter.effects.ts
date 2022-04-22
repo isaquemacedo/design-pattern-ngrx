@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, of } from "rxjs";
 import { VehiclesService } from "src/app/adapter/services/vehicles.service";
-import { loadVehiclesError, loadVehiclesSuccess } from "../actions/adapter.action";
+import { loadVehicles, loadVehiclesError, loadVehiclesSuccess } from "../actions/adapter.action";
 
 
 
@@ -14,7 +14,7 @@ export class AdapterEffects {
   ) {}
 
   loadVehicles$ = createEffect(() => this.actions.pipe(
-    ofType('[Vehicle Page] Load Vehicles'),
+    ofType(loadVehicles),
     mergeMap(() => this.vehiclesService.get().pipe(
       map(vehicles => loadVehiclesSuccess({vehicles})),
       catchError(() =>  [loadVehiclesError()] )

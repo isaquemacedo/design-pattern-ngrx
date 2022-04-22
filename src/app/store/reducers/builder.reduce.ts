@@ -18,13 +18,13 @@ export const initialState: BuilderState = {
 
 export const builderReduce = createReducer(
   initialState,
-  on(loadForm, (state, form) => {
+  on(loadForm, (state, {form}) => {
     return {
       ...state,
       form: form
     }
   }),
-  on(loadSession, (state, loadSession) => {
+  on(loadSession, (state, {loadSession}) => {
     return {
       ...state,
       loadSession: loadSession

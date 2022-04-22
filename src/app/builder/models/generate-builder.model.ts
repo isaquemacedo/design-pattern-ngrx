@@ -44,8 +44,8 @@ export class ConcreteBuilder extends GenerateBuilder {
   }
 
   override clientForm() {
-    this.storeBuilder.select((state) => state.builder ).subscribe(v => { 
-      this.data.form = v.form;
+    this.storeBuilder.select((state) => state.builder.form ).subscribe(v => { 
+      this.data.form = v;
     })
     return this.data.form;
   }

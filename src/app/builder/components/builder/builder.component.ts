@@ -34,7 +34,8 @@ export class BuilderComponent implements OnInit {
   ngOnInit(): void { }
 
   sendForm() {
-    this.storeBuilder.dispatch(loadForm(this.builder.client));
+    console.log(this.builder.client)
+    this.storeBuilder.dispatch(loadForm({form: this.builder.client}));
     this.loadSession();
     this.sendProposal();
   }
@@ -42,7 +43,7 @@ export class BuilderComponent implements OnInit {
   loadSession() {
     const obj = window.sessionStorage.getItem('exampleData');
     if (obj) {
-      this.storeBuilder.dispatch(loadSession(JSON.parse(obj)))
+      this.storeBuilder.dispatch(loadSession({loadSession: JSON.parse(obj)}))
     }
   }
 
