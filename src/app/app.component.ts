@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
+import { AdapterSession } from './builder/models/adapter-session.model';
+import { Simulation } from './builder/interfaces/simulation';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +17,14 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    window.sessionStorage.setItem('exampleData', JSON.stringify(
-      {
-        simulationId: 123123,
-        installmentsOptions: [12, 24, 36, 48],
-        feesValue: 0.89,
-        operatorId: 999
-      }
-    ))
+    const simulationAdapter = new AdapterSession();
+    const obj = simulationAdapter.adapt({
+      "simulationId": 123123,
+      "installmentsOptions": [12, 24, 36, 48],
+      "feesValue": 0.89,
+      "operatorId": 999,
+      "installmentSelected": 24
+    } as Simulation)
+    window.sessionStorage.setItem('exampleData', JSON.stringify(obj))
   }
 }

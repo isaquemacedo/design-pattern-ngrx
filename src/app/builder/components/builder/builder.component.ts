@@ -34,7 +34,6 @@ export class BuilderComponent implements OnInit {
   ngOnInit(): void { }
 
   sendForm() {
-    console.log(this.builder.client)
     this.storeBuilder.dispatch(loadForm({form: this.builder.client}));
     this.loadSession();
     this.sendProposal();
@@ -48,8 +47,6 @@ export class BuilderComponent implements OnInit {
   }
 
   sendProposal() {
-    setTimeout(() => {
-      console.log(this.concreteBuilder.build())
-    })
+    console.log(this.concreteBuilder.build())
   }
 }
