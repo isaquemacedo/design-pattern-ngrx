@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { VehicleAdapt } from 'src/app/adapter/interfaces/vehicle-adapt';
 import { loadForm, loadSession } from 'src/app/store/actions/builder.action';
+import { AdapterState } from 'src/app/store/reducers/adapter.reduce';
 import { BuilderState } from 'src/app/store/reducers/builder.reduce';
-import { Client } from '../../interfaces/client';
 import { BuilderForm } from '../../models/builder.form';
+import { ConcreteBuilder } from '../../models/generate-builder.model';
 
 
 @Component({
@@ -15,12 +15,11 @@ import { BuilderForm } from '../../models/builder.form';
 })
 export class BuilderComponent implements OnInit {
   adapt$;
-  formClient: Observable<any>;
-  builder = new BuilderForm()
-  loadSession: Observable<any>;
+  builder = new BuilderForm();
+  concreteBuilder: ConcreteBuilder
 
   constructor(
-    private storeAdapt: Store<{ adapt: {vehicleSelected: VehicleAdapt} }>,
+    private storeAdapt: Store<{ adapt: AdapterState }>,
     private storeBuilder: Store<{builder: BuilderState}>
   ) {
     this.builder.createForm({
@@ -29,32 +28,27 @@ export class BuilderComponent implements OnInit {
       email: ''
     });
     this.adapt$ = storeAdapt.select((state) => state.adapt.vehicleSelected);
-    this.formClient = storeBuilder.select((state) => state.builder.form);
-    this.loadSession = storeBuilder.select((state) => state.builder.loadSession);
+    this.concreteBuilder = new ConcreteBuilder(storeBuilder, storeAdapt)
   }
 
-  ngOnInit(): void {
-    this.showInfos();
-  }
+  ngOnInit(): void { }
 
   sendForm() {
-    this.storeBuilder.dispatch(loadForm(this.builder.client))
-    this.sendSession()
+    this.storeBuilder.dispatch(loadForm(this.builder.client));
+    this.loadSession();
+    this.sendProposal();
   }
 
-  sendSession() {
+  loadSession() {
     const obj = window.sessionStorage.getItem('exampleData');
     if (obj) {
       this.storeBuilder.dispatch(loadSession(JSON.parse(obj)))
     }
   }
 
-  showInfos() {
-    this.loadSession.subscribe(v => {
-      console.log(v, 'loadSession')
-    })
-    this.formClient.subscribe(v => {
-      console.log(v, 'formClient')
+  sendProposal() {
+    setTimeout(() => {
+      console.log(this.concreteBuilder.build())
     })
   }
 }

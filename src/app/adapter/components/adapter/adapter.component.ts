@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { loadVehicles, vehicleSelected } from 'src/app/store/actions/adapter.action';
+import { AdapterState } from 'src/app/store/reducers/adapter.reduce';
 import { VehicleAdapt } from '../../interfaces/vehicle-adapt';
 
 
@@ -14,7 +15,7 @@ export class AdapterComponent implements OnInit {
   adapt$;
 
   constructor(
-    private store: Store<{ adapt: {vehicles: VehicleAdapt[]} }>,
+    private store: Store<{ adapt: AdapterState }>,
     private router: Router
   ) {
     this.adapt$ = store.select((state) => state.adapt.vehicles);
