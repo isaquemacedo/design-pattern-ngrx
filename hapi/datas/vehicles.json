@@ -7,10 +7,11 @@
     "type": "Hatchback",
     "fuel": ["Gasolina", "alcool"],
     "uf": "SP",
-    "value": 205.790,
+    "value": 205790,
     "fipValue": 200000,
     "km": 0,
-    "color": "branco"
+    "color": "branco",
+    "image": "leaf"
   },
   {
     "year": 2019,
@@ -20,10 +21,11 @@
     "type": "Utilitário esportivo",
     "fuel": ["Gasolina"],
     "uf": "PR",
-    "value": 205.790,
+    "value": 205790,
     "fipValue": 200000,
     "km": 0,
-    "color": "branco"
+    "color": "branco",
+    "image": "fpace"
   },
   {
     "year": 2020,
@@ -33,9 +35,10 @@
     "type": "Utilitário esportivo",
     "fuel": ["Gasolina"],
     "uf": "SP",
-    "value": 458.900,
+    "value": 458900,
     "fipValue": 450000,
     "km": 0,
-    "color": "preto"
+    "color": "preto",
+    "image": "sq5"
   }
 ]

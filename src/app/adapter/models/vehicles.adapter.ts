@@ -11,7 +11,8 @@ export class VehiclesAdapter {
         manufacturer: v.manufacturer,
         model: v.model,
         year: v.year,
-        value: v.value
+        value: v.value,
+        image: v.image
       })
     })
     return array

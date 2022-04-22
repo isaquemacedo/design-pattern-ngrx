@@ -24,6 +24,8 @@
     "@hapi/hapi": "^20.2.2",
     "@ngrx/effects": "^13.1.0",
     "@ngrx/store": "^13.1.0",
+    "@ngrx/store-devtools": "^13.1.0",
+    "ngx-mask": "^13.1.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

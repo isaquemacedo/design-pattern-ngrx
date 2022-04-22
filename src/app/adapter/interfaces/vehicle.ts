@@ -10,4 +10,5 @@ export interface Vehicle {
   fipValue: number;
   km: number;
   color: string;
+  image: string;
 }

@@ -14,5 +14,14 @@ export class AppComponent {
     private store: Store<{ count: number }>) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.sessionStorage.setItem('exampleData', JSON.stringify(
+      {
+        simulationId: 123123,
+        installmentsOptions: [12, 24, 36, 48],
+        feesValue: 0.89,
+        operatorId: 999
+      }
+    ))
+  }
 }

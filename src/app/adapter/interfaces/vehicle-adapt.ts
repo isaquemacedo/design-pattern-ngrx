@@ -3,4 +3,5 @@ export interface VehicleAdapt {
   model: string;
   year: number;
   value: number;
+  image: string;
 }

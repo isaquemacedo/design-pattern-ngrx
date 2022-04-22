@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdapterComponent } from './components/adapter.component';
+import { AdapterComponent } from './components/adapter/adapter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdapterRoutingModule } from './adapter.routing';
 import { EffectsModule } from '@ngrx/effects';
-import { AdapterEffects } from './store/adapter.effects';
+
 import { StoreModule } from '@ngrx/store';
-import { adaptReduce } from './store/adapter.reduce';
-import {MatListModule} from '@angular/material/list';
+
+import {MatCardModule} from '@angular/material/card';
+import { adaptReduce } from '../store/reducers/adapter.reduce';
+import { AdapterEffects } from '../store/effects/adapter.effects';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import {MatListModule} from '@angular/material/list';
     AdapterRoutingModule,
     StoreModule.forFeature('adapt', adaptReduce ),
     EffectsModule.forFeature([AdapterEffects]),
-    MatListModule
+    MatCardModule
   ]
 })
 export class AdapterModule { }

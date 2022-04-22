@@ -1,0 +1,13 @@
+<h1><strong>Qual veículo você deseja ?</strong></h1>
+<div class="col-sm">
+  <mat-card *ngFor="let a of adapt$ | async, index as i" class="card" (click)="selectVehicle(a)">
+    <mat-card-title-group>
+      <mat-card-title>{{a.manufacturer}} {{a.model}}</mat-card-title>
+      <mat-card-subtitle>{{a.year}}</mat-card-subtitle>
+      <img mat-card-sm-image src="/assets/{{a.image}}.jpg" >
+    </mat-card-title-group>
+    <mat-card-content>
+      {{a.value | currency : 'BRL'}}
+    </mat-card-content>
+  </mat-card>
+</div>

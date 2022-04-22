@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, of } from "rxjs";
-import { VehiclesService } from "../services/vehicles.service";
-import { loadVehiclesError, loadVehiclesSuccess } from "./adapter.action";
+import { VehiclesService } from "src/app/adapter/services/vehicles.service";
+import { loadVehiclesError, loadVehiclesSuccess } from "../actions/adapter.action";
+
+
 
 @Injectable()
 export class AdapterEffects {
